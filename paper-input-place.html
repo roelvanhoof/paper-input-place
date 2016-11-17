@@ -23,9 +23,9 @@ Google Places Autocomplete attached to paper-input
     <template is="dom-if" if="[[apiKey]]" restamp="true">
       <google-maps-api api-key="[[apiKey]]" on-api-load="_mapsApiLoaded"></google-maps-api>
     </template>
-  <paper-input id="locationsearch" label="[[label]]" value="{{_value}}" invalid="[[invalid]]" disabled$="[[disabled]]" error-message="Invalid - please select a place">
-    <iron-icon icon="clear" suffix on-tap="_clearLocation"></iron-icon>
-  </paper-input>
+    <paper-input id="locationsearch" label="[[label]]" value="{{_value}}" invalid="[[invalid]]" disabled$="[[disabled]]" focused="{{focused}}" error-message="Invalid - please select a place">
+      <iron-icon icon="clear" suffix on-tap="_clearLocation"></iron-icon>
+    </paper-input>
   </template>
 
   <script>
@@ -164,6 +164,13 @@ Google Places Autocomplete attached to paper-input
           type: Object,
           notify: true,
           observer: '_valueChanged'
+        },
+        /**
+         * Wether the input has focus or not
+         */
+        focused: {
+          type: Boolean,
+          notify: true
         },
         /** @private */
         _value: {

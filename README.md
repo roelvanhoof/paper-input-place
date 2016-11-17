@@ -43,6 +43,9 @@ and attached to the input control.
 If specified the element doesn't display an error message and doesn't turn red.
 Set `hide-error` in the markup to suppress validation.
 
+### focused
+If the input has focus
+
 ### invalid
 `invalid` is a _read only_ property which indicates if the control has a valid place.
 ```html
